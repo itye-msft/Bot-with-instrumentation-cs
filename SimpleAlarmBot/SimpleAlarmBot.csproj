@@ -48,8 +48,8 @@
       <HintPath>..\packages\Autofac.4.3.0\lib\net45\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="BotBuilder.Instrumentation, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BotBuilder.Instrumentation.1.0.0.3\lib\BotBuilder.Instrumentation.dll</HintPath>
+    <Reference Include="BotBuilder.Instrumentation, Version=1.0.0.36, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BotBuilder.Instrumentation.1.0.0.36\lib\net46\BotBuilder.Instrumentation.dll</HintPath>
     </Reference>
     <Reference Include="Chronic, Version=0.3.2.0, Culture=neutral, PublicKeyToken=3bd1f1ef638b0d3c, processorArchitecture=MSIL">
       <HintPath>..\packages\Chronic.Signed.0.3.2\lib\net40\Chronic.dll</HintPath>

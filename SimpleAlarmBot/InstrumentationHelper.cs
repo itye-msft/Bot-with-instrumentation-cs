@@ -8,16 +8,12 @@ namespace Microsoft.Bot.Sample.SimpleAlarmBot
 {
     public class InstrumentationHelper
     {
-        public static readonly BotFrameworkApplicationInsightsInstrumentation DefaultInstrumentation = new BotFrameworkApplicationInsightsInstrumentation(
-            new BotBuilder.Instrumentation.Instumentation.InstrumentationSettings
+        public static BotBuilder.Instrumentation.Interfaces.IBotFrameworkInstrumentation DefaultInstrumentation
+        {
+            get
             {
-                InstrumentationKeys = new List<string>(new string[] { ConfigurationManager.AppSettings["InstrumentationKey"] }),
-                OmitUsernameFromTelemetry = Convert.ToBoolean(ConfigurationManager.AppSettings["InstrumentationShouldOmitUsernameFromTelemetry"]),
-                SentimentManager = new SentimentManager(
-                            ConfigurationManager.AppSettings["TextAnalyticsApiKey"],
-                            ConfigurationManager.AppSettings["TextAnalyticsMinLenght"],
-                            ConfigurationManager.AppSettings["CognitiveServiceApiEndpoint"]
-                            )
-            });
+                return BotBuilder.Instrumentation.DependencyResolver.Current.DefaultInstrumentationWithCognitiveServices;
+            }
+        }
     }
 }

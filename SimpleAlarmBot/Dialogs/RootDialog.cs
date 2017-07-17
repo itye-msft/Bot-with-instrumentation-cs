@@ -6,6 +6,7 @@ using Microsoft.Bot.Builder.FormFlow;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
 using BotBuilder.Instrumentation.Dialogs;
+using System.Configuration;
 
 namespace Microsoft.Bot.Sample.SimpleAlarmBot.Dialogs
 {
@@ -16,7 +17,8 @@ namespace Microsoft.Bot.Sample.SimpleAlarmBot.Dialogs
         private const string _entityAlarmStartTime = "builtin.datetime.time";
         private static readonly Services.AlarmService _alarms = new Services.AlarmService();
 
-        public RootDialog(string luisModelId, string luisSubscriptionKey) : base(luisModelId, luisSubscriptionKey)
+        public RootDialog()
+            : base(ConfigurationManager.AppSettings["LuisModelId"], ConfigurationManager.AppSettings["LuisSubscriptionKey"])
         {
         }
 

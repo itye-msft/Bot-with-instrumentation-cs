@@ -23,7 +23,7 @@ namespace Microsoft.Bot.Sample.SimpleAlarmBot.Controllers
             {
                 if (activity.Type == ActivityTypes.Message)
                 {
-                    await Conversation.SendAsync(activity, () => new RootDialog(ConfigurationManager.AppSettings["LuisModelId"], ConfigurationManager.AppSettings["LuisSubscriptionKey"]));
+                    await Conversation.SendAsync(activity, () => new RootDialog());
                 }
                 else
                 {
